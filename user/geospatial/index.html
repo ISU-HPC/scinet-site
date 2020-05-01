@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>SCINet for geospatial research | SCINet | USDA Scientific Computing Initiative</title>
+
+
+
+<meta name="description" content="SCINet has a number of tools available for geospatial research">
+
+
+
+<link rel="shortcut icon" type="image/ico"
+  href="/assets/uswds/img/favicons/favicon.ico">
+
+<link rel="icon" type="image/png"
+  href="/assets/uswds/img/favicons/favicon.png">
+
+<link rel="icon" type="image/png"
+  sizes="192x192"
+  href="/assets/uswds/img/favicons/favicon-192.png">
+
+<link rel="apple-touch-icon-precomposed" type=""
+  href="/assets/uswds/img/favicons/favicon-57.png">
+
+<link rel="apple-touch-icon-precomposed" type=""
+  sizes="72x72"
+  href="/assets/uswds/img/favicons/favicon-72.png">
+
+<link rel="apple-touch-icon-precomposed" type=""
+  sizes="114x114"
+  href="/assets/uswds/img/favicons/favicon-114.png">
+
+<link rel="apple-touch-icon-precomposed" type=""
+  sizes="144x144"
+  href="/assets/uswds/img/favicons/favicon-144.png">
+
+
+
+    
+
+
+
+<link rel="stylesheet"
+  href="/assets/css/main.css"
+  media="screen">
+
+
+    
+      
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-27627304-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  // `forceSSL` was used for analytics.js (the older Google Analytics script). It isn't documented for gtag.js, but the term occurs in the gtag.js code; figure it doesn't hurt to leave it in. -@afeld, 5/29/19
+  gtag('config', 'UA-27627304-1', { 'anonymize_ip': true, 'forceSSL': true });
+</script>
+
+
+
+<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
+<script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=USDA"></script>
+
+
+    
+  </head>
+  <body class="  ">
+
+    <a class="usa-skipnav" href="#main-content">Skip to main content</a>
+
+    
+
+
+
+
+
+
+  <header class="usa-header usa-header-extended" role="banner">
+
+
+  
+    <div class="usa-navbar">
+      <button class="usa-menu-btn">Menu</button>
+      <div class="usa-logo" id="extended-mega-logo">
+        <a href="/" title="Home">
+          
+            <img class="usa-logo-img" src="/assets/img/usda-symbol-rgb-color.svg" alt="USDA-ARS">
+          
+          <em class="usa-logo-text">
+            SCINet Scientific Computing Initiative
+          </em>
+        </a>
+      </div>
+    </div>
+
+    <nav role="navigation" class="usa-nav">
+      <div class="usa-nav-inner">
+        <button class="usa-nav-close">
+          <img src="/assets/uswds/img/close.svg" alt="close">
+        </button>
+
+        
+        
+        
+        <ul class="usa-nav-primary usa-accordion">
+          
+          <li>
+            
+              <a class=" usa-nav-link  " href="/signup/">
+                <span>Sign up for an account</span>
+              </a>
+            
+          </li>
+          
+          <li>
+            
+              
+              
+              
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="nav-2">
+              <span>News</span>
+            </button>
+            
+            <ul id="nav-2" class="usa-nav-submenu" aria-hidden="true">
+            
+            
+              
+                
+                <li>
+                  <a href="/announcements/">Announcements</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/stories/">User Stories</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/newsletter/">Newsletter</a>
+                </li>
+                
+              
+            
+            </ul>
+            
+            
+            
+          </li>
+          
+          <li>
+            
+              
+              
+              
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="nav-3">
+              <span>User Guides</span>
+            </button>
+            
+            <ul id="nav-3" class="usa-nav-submenu" aria-hidden="true">
+            
+            
+              
+                
+                <li>
+                  <a href="/guide/quickstart">Quick Start</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/ceres">Ceres User manual</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/multifactor">Set up Multifactor authetication</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/software">Software Overview</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/packageinstall">Installing R/Python/Perl Packages</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/conda">Installing Software with Conda</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/file-transfer">Transferring files</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/clc">CLC Workbench</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/rstudio">Rstudio</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/geneious">Geneious</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/galaxy">Galaxy on SCINet</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/guide/singularity">Containers</a>
+                </li>
+                
+              
+            
+            </ul>
+            
+            
+            
+          </li>
+          
+          <li>
+            
+              <a class=" usa-nav-link  " href="/working-groups">
+                <span>Working Groups</span>
+              </a>
+            
+          </li>
+          
+          <li>
+            
+              
+              
+              
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="nav-5">
+              <span>Training</span>
+            </button>
+            
+            <ul id="nav-5" class="usa-nav-submenu" aria-hidden="true">
+            
+            
+              
+                
+                <li>
+                  <a href="/training/">Overview</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/training/tutorials/">ARS Science Tutorials</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/training/free-online-training">Free Online Training</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/workshops/">Workshops</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/training/bioinformatics-workbook">Bioinformatics Workbook</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/training/useful-links">Useful Links</a>
+                </li>
+                
+              
+            
+            </ul>
+            
+            
+            
+          </li>
+          
+          <li>
+            
+              
+              
+              
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="nav-6">
+              <span>Use Cases</span>
+            </button>
+            
+            <ul id="nav-6" class="usa-nav-submenu" aria-hidden="true">
+            
+            
+              
+                
+                <li>
+                  <a href="/user/genomics/">Genomics</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/user/plant-breeding/">Plant breeding</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/user/geospatial/">Geospatial</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/user/hydrology/">Hydrology</a>
+                </li>
+                
+              
+            
+            </ul>
+            
+            
+            
+          </li>
+          
+          <li>
+            
+              
+              
+              
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="nav-7">
+              <span>Support</span>
+            </button>
+            
+            <ul id="nav-7" class="usa-nav-submenu" aria-hidden="true">
+            
+            
+              
+                
+                <li>
+                  <a href="/support/vrsc/">Virtual Research Support Core (VSRC)</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/support/faq/">FAQ's</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/support/basecamp">Basecamp User Forum</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/support/request-storage">Request Project Storage</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/support/request-software">Request Software</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/support/request-AWS">Request AWS</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/support/ceres-job-script">Ceres Job Script Generator</a>
+                </li>
+                
+              
+            
+            </ul>
+            
+            
+            
+          </li>
+          
+          <li>
+            
+              
+              
+              
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="nav-8">
+              <span>About</span>
+            </button>
+            
+            <ul id="nav-8" class="usa-nav-submenu" aria-hidden="true">
+            
+            
+              
+                
+                <li>
+                  <a href="/about/compute">Computer Systems</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/about/organization">Organization</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/team/">People</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/about/contact">Contact</a>
+                </li>
+                
+              
+            
+            </ul>
+            
+            
+            
+          </li>
+          
+          <li>
+            
+              
+              
+              
+            <button class="usa-accordion-button usa-nav-link" aria-expanded="false" aria-controls="nav-9">
+              <span>Opportunities</span>
+            </button>
+            
+            <ul id="nav-9" class="usa-nav-submenu" aria-hidden="true">
+            
+            
+              
+                
+                <li>
+                  <a href="/opportunities/SAC">SAC Membership</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/opportunities/request-workshop">Request a Workshop</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/opportunities/postdocs">Postdocs</a>
+                </li>
+                
+              
+                
+                <li>
+                  <a href="/opportunities/events">Upcoming Events</a>
+                </li>
+                
+              
+            
+            </ul>
+            
+            
+            
+          </li>
+          
+        </ul>
+        
+
+        
+
+          
+          
+          <div class="usa-nav-secondary">
+            
+              <form accept-charset="UTF-8" action="https://search.usa.gov/search" class="usa-search usa-search-small js-search-form" method="get">
+  <input name="utf8" type="hidden" value="&#x2713;"/>
+  <input id="affiliate" name="affiliate" type="hidden" value="scinet-usda"/>
+  <div role="search">
+    <label class="usa-sr-only" for="query">Enter Search Term(s):</label>
+    <input autocomplete="off" class="usagov-search-autocomplete" id="query" name="query" type="search"/>
+    <button type="submit">
+      <span class="usa-sr-only">Search</span>
+    </button>
+  </div>
+</form>
+
+            
+            <ul class="usa-unstyled-list usa-nav-secondary-links">
+              
+              <li class="js-search-button-container">
+                <button class="usa-header-search-button js-search-button">Search</button>
+              </li>
+              
+              
+              
+                <li>
+                  <a href=""
+                  >
+                    
+                  </a>
+                </li>
+              
+            </ul>
+          </div>
+          
+
+
+        </div>
+      </div>
+    </nav>
+  
+  </header>
+  <div class="usa-overlay"></div>
+
+
+
+
+    
+    
+
+
+    
+
+    
+
+    
+      
+      
+
+
+
+
+    
+    
+
+    <main id="main-content" class="usa-grid usa-section usa-content usa-layout-docs">
+          
+
+
+<div class="usa-layout-docs-main_content">
+  
+    
+      <h1>SCINet for geospatial research</h1>
+    
+  
+  <p><br />
+By: Pat Clark and Rowan Gaffney</p>
+
+<h4 id="table-of-contents">Table of Contents</h4>
+<ul>
+  <li><a href="#use-cases">Use Cases</a></li>
+  <li><a href="#when-to-use-scinet">When to Use SCINet?</a></li>
+  <li><a href="#tools-and-software">Tools and Software</a></li>
+</ul>
+
+<h2 id="use-cases">Use Cases</h2>
+<hr />
+<h3 id="machine-learning"><strong>Machine Learning</strong></h3>
+<ul>
+  <li>Classification</li>
+  <li>Clustering: <a href="/assets/img/geospatial/Tutorial1_Example2_Hyperspectral.html">Python Notebook Example</a></li>
+  <li>Regression</li>
+</ul>
+
+<h3 id="modeling"><strong>Modeling</strong></h3>
+<ul>
+  <li>Process Based or Statistical Models</li>
+</ul>
+
+<h3 id="time-series-analysis"><strong>Time Series Analysis</strong></h3>
+<ul>
+  <li>Estimating Productivity</li>
+  <li>Land Use / Land Change</li>
+</ul>
+
+<h3 id="geostatistics"><strong>Geostatistics</strong></h3>
+<ul>
+  <li>Spatial Variance or Autocorrelation</li>
+  <li>Kriging / Interpolation</li>
+</ul>
+
+<h3 id="processing-data"><strong>Processing Data</strong></h3>
+<ul>
+  <li>UAS DN/Radiance to Reflectance</li>
+</ul>
+
+<h2 id="when-to-use-scinet">When to Use SCINet?</h2>
+<hr />
+<p>Setting up analyses to run on SCINet involves a non-trivial amount of overhead. Therefore, you should first evaluate if SCINet is an appropriate avenue for your research. Typically, analyses that are well-suited for SCINet are:</p>
+<ul>
+  <li>CPU intensive workloads</li>
+  <li>high memory workloads</li>
+</ul>
+
+<p>Additional considerations are:</p>
+<ul>
+  <li>Are my analyses already optimized?</li>
+  <li>Will I need to parallelize my analyses (typical for CPU intensive workloads)?</li>
+  <li>Will I require more than a single node of compute power (ie. distributed computing)?
+<br /></li>
+</ul>
+
+<h2 id="tools-and-software">Tools and Software</h2>
+<hr />
+<p>The following tools/software are currently available on SCINet. (See the <a href="/guide/software">Software Overview</a> for a full list of currently available software.)</p>
+
+<h3 id="geospatial-specific-software">Geospatial Specific Software</h3>
+<ul>
+  <li><a href="https://www.harrisgeospatial.com/Software-Technology/ENVI"><strong>ENVI</strong></a> (5.5): Image analysis software (1 license available)</li>
+  <li><a href=""><strong>ESMF: Earth System Modeling Framework</strong></a> (7.1): High-performance, flexible software infrastructure for building and coupling weather, climate, and related Earth science applications</li>
+  <li><a href="https://github.com/OSGeo/PROJ"><strong>Proj4</strong></a> (4.9.3): Generic coordinate transformation software</li>
+  <li><a href="https://gdal.org/"><strong>GDAL/OGR: Geospatial Data Abstraction Library</strong></a> (1.11.4): Library for reading and writing raster and vector geospatial data formats</li>
+</ul>
+
+<h3 id="applicable-general-software">Applicable General Software</h3>
+<ul>
+  <li><a href="https://www.h2o.ai"><strong>H2O</strong></a> (3.2.0.3): Distributed in-memory machine learning platform with APIs in R and Python</li>
+  <li><a href="https://www.python.org/"><strong>Python</strong></a> (3.6.6): Interpreted, high-level, general-purpose programming language</li>
+  <li><a href="https://www.r-project.org/"><strong>R</strong></a> (3.5.2): Software environment for statistical computing and graphics</li>
+  <li><a href="https://www.rstudio.com/"><strong>RStudio and RStudio Server</strong></a>: An integrated development environment (IDE) for R</li>
+  <li><a href="https://jupyterlab.readthedocs.io/en/stable/"><strong>JupyterLab</strong></a>: Web-based user interface for Project Jupyter</li>
+</ul>
+
+<h3 id="other">Other</h3>
+<ul>
+  <li><a href="https://hub.docker.com/r/rowangaffney/data_science_im_rs"><strong>SCINet Remote Sensing Container Image</strong></a>: Python+R geospatial libraries and JupyterLab IDE (R, IDL, and Python kernels).
+    <ul>
+      <li><a href="/assets/img/geospatial/Tutorial1-JHub.html">User Tutorial</a> for JupyterLab+Dask Distrubuted using:
+        <ul>
+          <li>container: /project/geospatial_tutorials/data_science_im_rs_latest.sif</li>
+          <li>sbatch script: /project/geospatial_tutorials/data_science_nb_dask.sbatch</li>
+        </ul>
+      </li>
+      <li>Optionally, pull the container from dockerhub to local folder with:
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>singularity pull docker://rowangaffney/data_science_im_rs
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+
+    
+
+
+  
+<footer class="usa-footer usa-footer-big" role="contentinfo">
+
+  
+    <div class="usa-grid">
+      <div class="usa-width-one-whole">
+        <p>Last updated: April 13, 2020 at 04:44 PM</p>
+      </div>
+    </div>
+  
+
+  
+    <div class="usa-grid usa-footer-return-to-top">
+      <a href="#">Return to top</a>
+    </div>
+  
+
+
+
+  
+    
+    
+    
+    
+  <div class="usa-footer-primary-section">
+    <div class="usa-grid">
+      <nav class="usa-footer-nav">
+        
+        <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
+          <li class="usa-footer-primary-link">
+            <h4></h4>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/policies-and-links">
+              Policies and Links
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/our-agency/about-usda/performance">
+              Our Performance
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://www.usda.gov/our-agency/careers">
+              Careers
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://www.usda.gov/oig/contractorform.htm">
+              Report Fraud on USDA
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://www.usda.gov/oig/">
+              Visit OIG
+            </a>
+          </li>
+          
+        </ul>
+        
+        <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
+          <li class="usa-footer-primary-link">
+            <h4></h4>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/plain-writing">
+              Plain Writing
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/open">
+              Open
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://www.dm.usda.gov/foia/">
+              FOIA
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/accessibility-statement">
+              Accessibility Statement
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/privacy-policy">
+              Privacy Policy
+            </a>
+          </li>
+          
+        </ul>
+        
+        <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
+          <li class="usa-footer-primary-link">
+            <h4></h4>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/non-discrimination-statement">
+              Non-Discrimination Statement
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://www.ascr.usda.gov/civil-rights-statements">
+              Anti-Harassment Policy
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://www.ocio.usda.gov/policy-directives-records-forms/information-quality-activities">
+              Information Quality
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://www.usa.gov">
+              USA.gov
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://www.whitehouse.gov">
+              WhiteHouse.gov
+            </a>
+          </li>
+          
+        </ul>
+        
+        <ul class="usa-unstyled-list usa-width-one-fourth usa-footer-primary-content">
+          <li class="usa-footer-primary-link">
+            <h4></h4>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/federal-web-site-inventory">
+              eGov
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="mailto:scinet_vrsc@usda.gov">
+              Feedback
+            </a>
+          </li>
+          
+          <li class="usa-footer-secondary-link">
+            <a href="https://usda.gov/nofear">
+              No FEAR Act Data
+            </a>
+          </li>
+          
+        </ul>
+        
+      </nav>
+      
+    </div>
+  </div>
+  
+
+  
+  <div class="usa-footer-secondary_section">
+    <div class="usa-grid">
+      <div class="usa-footer-logo usa-width-one-half">
+        
+          
+            <img class="usa-footer-big-logo-img" src="/assets/img/usda-symbol-rgb-color.svg" alt="USDA-ARS">
+            
+          
+        
+
+        
+        <h3 class="usa-footer-big-logo-heading">USDA Agricultural Research Service</h3>
+        
+      </div>
+
+      
+      <div class="usa-footer-contact-links usa-width-one-half">
+        
+        
+          
+            <a class="usa-link-twitter" href="https://twitter.com/USDA_ARS">
+              <span>Twitter</span>
+            </a>
+          
+        
+        
+          <h3 class="usa-footer-contact-heading">Contact us</h3>
+          
+          
+            <address>
+              
+              
+                <div class="usa-footer-primary-content usa-footer-contact_info">
+                  <p>
+                    <a href="mailto:scinet_vrsc@usda.gov">
+                      scinet_vrsc@usda.gov
+                    </a>
+                  </p>
+                </div>
+              
+            </address>
+        
+      
+      
+      </div>
+    </div>
+  </div>
+  
+
+</footer>
+
+
+
+
+
+    
+
+
+
+
+
+  
+<script src="/assets/uswds/js/uswds.min.js" async></script>
+
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+      var usasearch_config = { siteHandle:"scinet-usda" };
+
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "//search.usa.gov/javascripts/remote.loader.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+
+//]]>
+</script>
+
+
+
+  </body>
+</html>
