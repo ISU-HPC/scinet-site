@@ -91,10 +91,10 @@ Windows 10 that is up to date has an ssh client in the Windows Power Shell. To u
 ```
 ssh <user.name>@login.scinet.science
 ```
-However we recommend creating a config file as described in the instructions for Mac and Linux in the next section. To create config file in `C: > Users > (your account) > .ssh` on your Windows 10 computer use Notepad. Make sure to save file with no extension (simply `config` and not `config.txt`). If you don't want to use config file, you can manually type longer ssh command described in the instructions for Mac and Linux below. The `-o` option is not required but helps to keep ssh connection alive. After typing ssh command, enter your password  and athentication code.
+However we recommend creating a config file as described in the instructions for Mac and Linux in the next section. To create config file in `C: > Users > (your account) > .ssh` on your Windows 10 computer use Notepad. Make sure to save file with no extension (simply `config` and not `config.txt`). If you don't want to use config file, you can manually type longer ssh command described in the instructions for Mac and Linux below. The `-o` option is not required but helps to keep ssh connection alive. After typing ssh command, enter athentication code (if prompted) and your password. **Note that when you type the code or the password, nothing will be shown on the screen.** 
 
 1.	If it is the first time you are logging in, a new Google Authentication account will be created for you, connection will close and and you will receive an email with instructions. After setting GA account on your mobile device, issue again ssh command and enter the 6-digit code from the GA app when prompted for Verification Code. If system accepts the code it will prompt you for password. If you made a mistake when typing 6-digit code, and are prompted for Verification code once again, wait for the new code to be generated.
-2.	If your password has expired (new temporary passwords expire right away, and the passwords set by users expire after 90 days) you will be prompted to change your password. Note that when changing password, first you will need to enter the same password that you used to login, and only when prompted for a new password, you will enter a new one.
+2.	If your password has expired (new temporary passwords expire right away, and the passwords set by users expire after 60 days) you will be prompted to change your password. Note that when changing password, first you will need to enter **the same password that you used to login**, and only when prompted for a new password, you will enter a new one.
 
 ## From Older Windows Versions
 
@@ -105,8 +105,8 @@ However we recommend creating a config file as described in the instructions for
 5. In the left-hand menu select “Data” category under the ‘Connection’ category and type your username on the right side
 6. To save these settings for later logins select the 'Session' category, and in the “Saved Sessions” type `SCINet`, then click on “Save” button.
 7. Hit "Open"
-8. Enter your password when prompted.  If it is the first time you are logging in, a new Google Authentication account will be created for you, connection will close and and you will receive an email with instructions. After setting GA account on your mobile device, ssh again to `login.scinet.science` and enter the 6-digit code from the GA app when prompted for Verification Code. If system accepts the code it will prompt you for password. If you made a mistake when typing 6-digit code, and are prompted for Verification code once again, wait for the new code to be generated.
-9. If your password has expired (new temporary passwords expire right away, and the passwords set by users expire after 90 days) you will be prompted to change your password. Note that when changing password, first you will need to enter the same password that you used to login, and only when prompted for a new password, you will enter a new one.
+8. Enter your password when prompted.  If it is the first time you are logging in, a new Google Authentication account will be created for you, connection will close and and you will receive an email with instructions. After setting GA account on your mobile device, ssh again to `login.scinet.science` and enter the 6-digit code from the GA app when prompted for Verification Code. If system accepts the code it will prompt you for password. **Note that when you type the code or the password, nothing will be shown on the screen.** If you made a mistake when typing 6-digit code, and are prompted for Verification code once again, wait for the new code to be generated.
+9. If your password has expired (new temporary passwords expire right away, and the passwords set by users expire after 60 days) you will be prompted to change your password. Note that when changing password, first you will need to enter **the same password that you used to login**, and only when prompted for a new password, you will enter a new one.
 
 ![screenshot of Putty software](/assets/img/putty.png)
 
@@ -134,8 +134,8 @@ ssh -o TCPKeepAlive=yes -o ServerAliveInterval=20 -o ServerAliveCountMax=30 <use
 ```
 Enter your password when prompted.  
 
-1. If it is the first time you are logging in, a new Google Authentication account will be created for you, connection will close and and you will receive an email with instructions. After setting GA account on your mobile device, ssh again to login.scinet.science and enter the 6-digit code from the GA app when prompted for Verification Code. If system accepts the code it will prompt you for password. If you made a mistake when typing 6-digit code, and are prompted for Verification code once again, wait for the new code to be generated.
-2. If your password has expired (new temporary passwords expire right away, and the passwords set by users expire after 90 days) you will be prompted to change your password. Note that when changing password, first you will need to enter the same password that you used to login, and only when prompted for a new password, you will enter a new one.
+1. If it is the first time you are logging in, a new Google Authentication account will be created for you, connection will close and and you will receive an email with instructions. After setting GA account on your mobile device, ssh again to login.scinet.science and enter the 6-digit code from the GA app when prompted for Verification Code. If system accepts the code it will prompt you for password. **Note that when you type the code or the password, nothing will be shown on the screen.** If you made a mistake when typing 6-digit code, and are prompted for Verification code once again, wait for the new code to be generated.
+2. If your password has expired (new temporary passwords expire right away, and the passwords set by users expire after 60 days) you will be prompted to change your password. Note that when changing password, first you will need to enter **the same password that you used to login**, and only when prompted for a new password, you will enter a new one.
 
 
 # Password Requirements
@@ -242,16 +242,16 @@ The following are a few of the common text editors that are available on the sys
 
 # Ceres Compute Nodes
 
-There are different queues or partitions on the Ceres cluster. You will specify a queue when submitting batch jobs.
+There are different queues or partitions on the Ceres cluster. You will specify a queue when submitting Slurm jobs.
 
 Main partitions are listed in the table below:
 
 Name |	Nodes	|Maximum Run Time	|Function
 ---|---|---|---
-short	|55	|48 hours|	default queue, for short runs
-medium|	25|	7 days	|for medium-length runs
-long	|15|	21 days |	for long runs
-mem	|5|	7 days|	for applications requiring high memory
+short	|100	|48 hours|	default queue, for short runs
+medium|	68|	7 days	|for medium-length runs
+long	|35|	21 days |	for long runs
+mem	|8|	7 days|	for applications requiring high memory
 longmem|	1|	1000 hours	|for high memory applications requiring more than a week
 debug|	1|	1 hour	|for testing
 ---|---|---|---
@@ -261,7 +261,7 @@ To get current details on all partitions use the following scontrol command:
 scontrol show partitions
 ```
 
-In addition, at most 400 cores can be used by all simultaneously running jobs per user across all queues. Any additional jobs will be queued but won't start.
+At most 400 cores can be used by all simultaneously running jobs per user across all queues. Any additional jobs will be queued but won't start.
 
 ## Interactive Mode
 
@@ -317,7 +317,6 @@ Command	|Description	|Examples
 `squeue`	|Gives information about jobs	|`squeue` or `squeue -u jane.webb`
 `scancel`	|Stop and remove jobs|	`scancel 1256` or `scancel -u jane.webb`
 `sinfo`	|Gives information about queues (partitions) or nodes	|`sinfo` or `sinfo -N -l`
-`sinfo` | gives information about state of nodes | `sinfo`
 
 
 # Building Your Own Tools
